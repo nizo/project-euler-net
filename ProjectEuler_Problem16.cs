@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -53,14 +53,16 @@ namespace ProjectEuler_01
 					}
 
 				}
-				
+
 			}
 
 			// Sum every digit
 			for (int i = 0; i < 1000; i++)
+			{
 				if (number[i] == -1)
 					break;
 				result += number[i];
+			}
 
 
 			System.Console.WriteLine(result);			
@@ -68,6 +70,3 @@ namespace ProjectEuler_01
 		}		
     }
 }
-
-
-
