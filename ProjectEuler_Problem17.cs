@@ -6,72 +6,7 @@ using System.Text;
 namespace ProjectEuler_01
 {
     class Program
-	{
-
-		#region Helpers
-
-		static bool IsNumberPalindrome(int candidate)
-		{
-			string stringCandidate = candidate.ToString();
-
-			for (int i = 0; i < stringCandidate.Length / 2; i++)
-			{
-				if (stringCandidate[i] != stringCandidate[stringCandidate.Length - 1 - i])
-					return false;
-			}	
-			return true;
-		}
-
-		static bool IsNumberPrime(int candidate)
-		{
-			if (candidate == 2 || candidate == 3 || candidate == 5 || candidate == 7) return true;
-			if (candidate % 2 == 0 || candidate % 3 == 0 || candidate % 5 == 0 || candidate % 7 == 0) return false;
-			int limit = (int)Math.Sqrt(candidate);
-			for (int i = 2; i <= limit; i++)
-			{
-				if (candidate % i == 0)
-					return false;
-			}
-
-			return true;
-		}
-
-		static int GetNumberOfDivisors(int i)
-		{
-			int divisorsCount = 0;
-			int limit = (int)Math.Sqrt(i);
-
-			for (int j = 2; j <= limit; j++)
-			{
-				if (i % j == 0)
-					divisorsCount++;
-			}
-			return divisorsCount * 2 + 2;
-		}
-
-		static void ReadFile(out string[] input)
-		{
-			int counter = 0;
-			string line;
-			input = new string[100];
-			System.IO.StreamReader file = new System.IO.StreamReader("c:\\numbers.txt");
-			while ((line = file.ReadLine()) != null)
-			{
-				input[counter] = line;
-				counter++;
-			}
-			file.Close();
-		}
-
-		public static double factorial(double n)
-		{
-			if (n == 1)
-				return n;
-			return n * factorial(n - 1);
-		}
-
-#endregion
-
+	{		
 		static void Main(string[] args)
 		{
 			long result = 0;
