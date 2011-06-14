@@ -4,8 +4,6 @@ using System.Linq;
 using System.Text;
 using System.IO;
 
-
-
 namespace ProjectEuler_01
 {
 	class Program
@@ -90,10 +88,10 @@ namespace ProjectEuler_01
 			}
 
 			if (newMonth)
-				incrementMonth();
+				IncrementMonth();
 		}
 
-		static void incrementMonth()
+		static void IncrementMonth()
 		{
 			month++;
 			if (month == 13)
