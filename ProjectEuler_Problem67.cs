@@ -68,9 +68,9 @@ namespace ProjectEuler_01
 			}
 			else
 			{
+				// If node is leaf, add it to leaf list, and update its cummulated value
 				currentNode.CummulatedValue = currentNode.Value;
-
-				// If node is leaf, add it to leaf list
+				
 				if (traversingNode == null)
 					traversingNode = currentNode;
 			}
@@ -101,7 +101,7 @@ namespace ProjectEuler_01
 		{
 			Node holderNode = node;
 
-			// We adusted our algorythm a bit, instead of backtracing solution used in problem 18, we simply sum both nodes and assign the bigger value to their father. Repeat till root
+			// We adjusted our algorythm a bit, instead solution used in problem 18, we simply compare two adjacent nodes and assign the bigger value to theirs father. Repeat till root
 			while (node != root)
 			{
 				if (node.RightFather == null)
@@ -123,7 +123,7 @@ namespace ProjectEuler_01
 			Stopwatch stopwatch = new Stopwatch();
 
 			stopwatch.Start();
-			// Load data from txt file and convert them to two array
+			// Load data from txt file and convert them to two dimmensional array
 
 			#region LoadInputIntoArray
 
@@ -148,7 +148,7 @@ namespace ProjectEuler_01
 			}
 
 			#endregion
-			
+
 			// Create our data structure, basically a variation of binary tree, but node may have two fathers
 			root = InitializeRootNode();
 
@@ -161,8 +161,3 @@ namespace ProjectEuler_01
 		}
 	}
 }
-
-
-
-
-
