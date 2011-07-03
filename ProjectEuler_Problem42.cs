@@ -10,8 +10,6 @@ namespace ConsoleApplication1
 	class Program
 	{
 		static long result = 0;
-		static int limit = 20000;
-		static bool[] triangleNumbers = new bool[limit];
 		static Dictionary<char, int> chars = new Dictionary<char,int>();
 
 
@@ -45,7 +43,9 @@ namespace ConsoleApplication1
 				}
 
 				valueOfWord = GetValue(localString);
-				if (triangleNumbers[valueOfWord])
+
+				// Inverse function of triangle function
+				if (((Math.Sqrt(8*valueOfWord + 1) - 1) / 2) % 1 == 0)
 					result++;
 
 				localString = "";
@@ -63,9 +63,6 @@ namespace ConsoleApplication1
 
 			for (int i = 1; i <= alphabet.Length; i++)
 				chars.Add(alphabet[i - 1], i);
-
-			for (int i = 1; i < Math.Sqrt(limit) / 2; i++)
-				triangleNumbers[i * (i + 1) / 2] = true;
 
 			using (StreamReader streamReader = new StreamReader(inputFile))
 			{
