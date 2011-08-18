@@ -155,7 +155,7 @@ namespace ProjectEuler_01
 					System.Console.WriteLine(currentString);
 					string consoleInput = Console.ReadLine();
 
-					if (consoleInput == "a")
+					if (consoleInput == "a") 
 					{
 						System.Console.WriteLine("Sum of chars is " + GetASCIISum(currentString));
 						resultFound = true;
